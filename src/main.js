@@ -1,7 +1,10 @@
 import './assets/main.css';
+import './api';
 import { createApp } from 'vue';
 import App from './App.vue';
 import router from './router';
+
+//Import api.js
 
 // FONTAWESOME
 import { library } from '@fortawesome/fontawesome-svg-core';

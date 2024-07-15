@@ -1,26 +1,23 @@
 <script setup>
 import { onMounted, onUnmounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
+import { useAuth } from '@/composable/useAuth';
 
+const { logout } = useAuth();
 
 const router = useRouter();
 const isDropdownOpen = ref(false);
 
+const exitAndRemoveData = () => {
+  logout();
+  router.push('/login');
+}
 
 const toggleDropdown = () => {
   isDropdownOpen.value = !isDropdownOpen.value;
 };
 
 
-const exitAndRemoveData = async () => {
-
-  // REMOVE LOCAL STORAGE DETAIL
-  // ['accessToken', 'idClient', 'idCart', 'name', 'surname', 'email', 'cartCount'].forEach(item => {
-  //   localStorage.removeItem(item);
-  // });
-
-  router.push({ name: 'login' });
-};
 
 // CLICK OUTSIDE THE MENU FUNCTIONS
 const handleClickOutside = (event) => {
@@ -91,19 +88,4 @@ onUnmounted(() => {
     </nav>
   </header>
 
-  <!-- Confirm Logout Popup -->
-  <div v-if="isConfirmLogoutOpen"
-    class="fixed inset-0 flex items-center justify-center z-50 bg-background bg-opacity-85">
-    <div class="bg-card w-112  p-6 rounded-lg shadow-lg">
-      <p class="text-black text-sm mb-8"><span class="font-bold text-tDarkGray">If you log out, your cart will be
-          deleted. <br></span>
-        Do you really want
-        to log out?
-      </p>
-      <div class="flex justify-end font-bold text-sm">
-        <button @click="cancelLogout" class="bg-primary text-black px-4 py-2 rounded-full mr-2">Continue</button>
-        <button @click="exitAndRemoveData" class="bg-danger text-black px-4 py-2 rounded-full">Logout</button>
-      </div>
-    </div>
-  </div>
 </template>
