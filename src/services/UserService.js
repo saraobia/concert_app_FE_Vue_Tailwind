@@ -6,7 +6,7 @@ const UserService = {
       // console.log('UserService: Attempting to get user data');
       const response = await axios.get('/user/');
       console.log('UserService: Received response', response.data);
-      return response.data.date; // Restituisce direttamente i dati
+      return response.data.data; // Restituisce direttamente i dati
     } catch (error) {
       console.error('UserService: Error getting user data', error);
       throw error;

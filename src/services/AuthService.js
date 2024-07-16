@@ -8,19 +8,24 @@ class AuthService {
   async login(data) {
     try {
       const response = await axios.post(API_URL + 'login', data);
-      const accessToken = response.data.date.access_token;
-      const refreshToken = response.data.date.refresh_token;
+      console.log('Full response:', response.data); // Log for debugging
 
-      if (accessToken && refreshToken) {
-        localStorage.setItem('accessToken', accessToken);
-        localStorage.setItem('refreshToken', refreshToken);
-        console.log('Access Token:', accessToken);
-        console.log('Refresh Token:', refreshToken);
+      if (response.data && response.data.data) {
+        const { access_token: accessToken, refresh_token: refreshToken } =
+          response.data.data;
+
+        if (accessToken && refreshToken) {
+          localStorage.setItem('accessToken', accessToken);
+          localStorage.setItem('refreshToken', refreshToken);
+          console.log('Access Token:', accessToken);
+          console.log('Refresh Token:', refreshToken);
+          return response.data.data;
+        } else {
+          throw new Error('Access token or refresh token missing in response');
+        }
       } else {
-        throw new Error('Access token or refresh token missing in response');
+        throw new Error('Unexpected response structure');
       }
-
-      return response.data.date; // Puoi restituire l'intera risposta se necessario
     } catch (error) {
       console.error('Login failed:', error);
       throw error;
