@@ -23,8 +23,11 @@ export default {
     colors: {
       background: '#f9f9f9',
       card: '#131414',
-      lightBlue: '#f0f8ff',
-      darkLightBlue: '#bde7fe',
+      light: '#f0f9ff',
+      card: '#e0f2fe',
+      lightAzure: '#7bd3fe',
+      azure: '#35BCFB',
+      blue: '#0083ca',
       primary: '#27C499',
       secondary: '#BB86FC',
       secondaryDark: '#3700b3',
@@ -38,6 +41,7 @@ export default {
 
       warning: '#e3b02f',
       danger: '#CF6679',
+      darkDanger: '#d44e66',
     },
   },
 };

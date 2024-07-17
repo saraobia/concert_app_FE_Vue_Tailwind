@@ -6,7 +6,7 @@ import Footer from '../components/Footer.vue';
 <template>
   <div>
     <Header />
-    <main class="min-h-full flex items-center justify-center bg-gradient-to-b from-lightBlue to-darkLightBlue">
+    <main class="min-h-full flex items-center justify-center bg-gradient-to-b from-light to-blue">
       <router-view />
     </main>
     <Footer />

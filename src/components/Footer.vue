@@ -4,7 +4,7 @@
 
 <template>
   <!-- FOOTER -->
-  <footer class=" bg-darkLightBlue pt-7"> <!-- FOOTER CONTAINER -->
+  <footer class="bg-blue pt-7 text-blue"> <!-- FOOTER CONTAINER -->
     <div class="flex flex-col items-center justify-between py-4 px-4 bg-white shadow-lg rounded-t-xl">
       <!-- CONTAINER LOGO AND NAVIGATION -->
       <div class=" p-2 mb-8 flex justify-between w-full">
@@ -30,7 +30,7 @@
 
         <!-- FOOTER LOGO -->
         <div class="flex items-center mb-4">
-          <span class="font-extrabold text-middle">ETech</span>
+          <span class="font-extrabold text-middle">Comapany.co</span>
         </div>
       </div>
 
@@ -50,7 +50,7 @@
 
       <!-- FOOTER COPYRIGHT -->
       <div class="text-sm text-darkGray">
-        &copy; 2024 ETech All rights reserved.
+        &copy; 2024 Company.co All rights reserved.
       </div>
     </div>
   </footer>

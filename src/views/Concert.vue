@@ -25,8 +25,8 @@ onMounted(getConcertDetails);
 </script>
 
 <template>
-  <div class="flex flex-col items-center justify-center tablet:flex-row">
-    <div v-if="concert">
+  <div class="flex  flex-col my-32 items-center justify-center tablet:flex-row">
+    <div class="flex flex-col items-center justify-center tablet:flex-row" v-if="concert">
       <ConcertDetailsCard :concert="concert" />
       <BookingForm :concertDetails="concert" />
     </div>
