@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import UserService from '@/services/UserService';
+import ConcertTable from '@/components/ConcertTable.vue'
 
 const user = ref(null);
 const error = ref(null);
@@ -16,7 +17,6 @@ const getUserFromLocalStorage = () => {
 
 onMounted(async () => {
   try {
-    // Prima, controlla se l'utente è già nel localStorage
     const storedUser = getUserFromLocalStorage();
     if (storedUser) {
       user.value = storedUser;
@@ -40,15 +40,6 @@ onMounted(async () => {
 <template>
   <div class="">
     <h1>Welcome to the Homepage</h1>
-    <!-- <div v-if="user">
-      <p>Username: {{ user.name }}</p>
-      <p>Email: {{ user.email }}</p>
-    </div>
-    <div v-else>
-      <p>Loading user details...</p>
-    </div>
-    <div v-if="error">
-      <p>Error: {{ error.message }}</p>
-    </div> -->
+    <ConcertTable />
   </div>
 </template>

@@ -47,7 +47,7 @@ onUnmounted(() => {
       class="fixed bg-white w-full flex py-4 px-4 justify-between items-center text-black z-10 rounded-b-2xl shadow-2xl ">
       <ul class="flex justify-center items-center mt-1">
         <li class="font-black text-black">
-          <RouterLink name="home" to="/home">
+          <RouterLink name="home" to="/">
             Logo
           </RouterLink>
         </li>
@@ -75,7 +75,7 @@ onUnmounted(() => {
             </li>
 
             <li class="p-2 cursor-pointer hover:bg-hoverLight hover:rounded-md hover:shadow-md">
-              <RouterLink name="home" to="/home">Back to home</RouterLink>
+              <RouterLink name="home" to="/">Back to home</RouterLink>
             </li>
 
             <li class="p-2 cursor-pointer  hover:bg-hoverLight hover:rounded-md hover:shadow-md">
